@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circle Connection Visualization</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: #f4f4f9;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        #visualization {
+            width: 100%;
+            height: 500px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        #input-section {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            width: 100%;
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        .button-group {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        button i {
+            font-size: 18px;
+        }
+
+        button:hover {
+            background: #0056b3;
+        }
+		
+		      /* Position buttons at the top-right of the SVG */
+        .button-group1 {
+            position: absolute;
+            top: 30px;
+            right: 10px;
+            display: flex;
+            flex-direction: column; /* Arrange buttons vertically */
+            gap: 10px;
+        }
+
+        .button-group1 button {
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #55555575;
+        }
+		
+		
+		
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Visualization -->
+        <div id="visualization">
+            <svg></svg>
+        </div>
+
+        <!-- Input Section -->
+        <div id="input-section">
+            <h3>Entities (One per line):</h3>
+            <textarea id="entity-input" placeholder="Enter entities"></textarea>
+            <h3>Connections (Format: source->target):</h3>
+            <textarea id="connection-input" placeholder="Enter connections"></textarea>
+			<div class="button-group1">
+    <button onclick="exportPNG()" title="Export as PNG"><i class="fas fa-download"></i></button>
+    <button onclick="copyToClipboard()" title="Copy Image to Clipboard"><i class="fas fa-copy"></i></button>
+</div>		
+				
+            <div class="button-group">
+                <button onclick="submitData()">
+                    <i class="fas fa-sync-alt"></i> Render
+                </button>
+                <button onclick="exportPNG()">
+                    <i class="fas fa-file-image"></i> Export PNG
+                </button>
+				  <button onclick="copyToClipboard()">
+        <i class="fas fa-copy"></i> Copy Image
+    </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
