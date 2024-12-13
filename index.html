@@ -11,24 +11,32 @@
             font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
             background-color: #f4f4f9;
         }
 
         .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 20px auto;
             display: flex;
-            flex-direction: column;
+            width: 100%;
+            max-width: 1400px;
+            margin: 20px auto;
             gap: 20px;
         }
 
+        #input-section {
+            width: 15%; /* Adjust to make it 20-30% of total width */
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
         #visualization {
-            width: 100%;
-            height: 500px;
+            width: 80%; /* Adjust to make it 70-80% of total width */
+            position: relative;
+
             border: 1px solid #ccc;
             border-radius: 10px;
             background: white;
@@ -38,19 +46,8 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        #input-section {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-            width: 100%;
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
         textarea {
-            width: 100%;
+            width: 90%;
             height: 100px;
             padding: 10px;
             border: 1px solid #ddd;
@@ -85,14 +82,13 @@
         button:hover {
             background: #0056b3;
         }
-		
-		      /* Position buttons at the top-right of the SVG */
+
         .button-group1 {
             position: absolute;
-            top: 30px;
+            top: 10px;
             right: 10px;
             display: flex;
-            flex-direction: column; /* Arrange buttons vertically */
+            flex-direction: column;
             gap: 10px;
         }
 
@@ -103,43 +99,38 @@
             cursor: pointer;
             color: #55555575;
         }
-		
-		
-		
+
+        .button-group1 button:hover {
+            color: #007bff;
+        }
     </style>
 </head>
 <body>
     <div class="container">
-        <!-- Visualization -->
-        <div id="visualization">
-            <svg></svg>
-        </div>
-
         <!-- Input Section -->
         <div id="input-section">
             <h3>Entities (One per line):</h3>
             <textarea id="entity-input" placeholder="Enter entities"></textarea>
             <h3>Connections (Format: source->target):</h3>
             <textarea id="connection-input" placeholder="Enter connections"></textarea>
-			<div class="button-group1">
-    <button onclick="exportPNG()" title="Export as PNG"><i class="fas fa-download"></i></button>
-    <button onclick="copyToClipboard()" title="Copy Image to Clipboard"><i class="fas fa-copy"></i></button>
-</div>		
-				
             <div class="button-group">
                 <button onclick="submitData()">
                     <i class="fas fa-sync-alt"></i> Render
                 </button>
-                <button onclick="exportPNG()">
-                    <i class="fas fa-file-image"></i> Export PNG
-                </button>
-				  <button onclick="copyToClipboard()">
-        <i class="fas fa-copy"></i> Copy Image
-    </button>
+            </div>
+        </div>
+
+        <!-- Visualization -->
+        <div id="visualization">
+            <svg></svg>
+            <div class="button-group1">
+                <button onclick="exportPNG()" title="Export as PNG"><i class="fas fa-download"></i></button>
+                <button onclick="copyToClipboard()" title="Copy Image to Clipboard"><i class="fas fa-copy"></i></button>
             </div>
         </div>
     </div>
 
     <script src="app.js"></script>
+
 </body>
 </html>
