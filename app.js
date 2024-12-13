@@ -72,7 +72,7 @@ function render() {
         })
         .attr("alignment-baseline", "middle")
         .text(d => d.id)
-        .style("font-size", "20px")
+        .style("font-size", "18px")
         .style("fill", d => entityColors[d.id]);
 
     // Draw directed connections with adjusted paths and colors
