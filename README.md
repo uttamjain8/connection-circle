@@ -1,6 +1,6 @@
-# Circle Connection Visualization Tool
+# Connection Circle Visualization Tool
 
-Welcome to the **Circle Connection Visualization Tool**! This tool is designed to visualize relationships and connections between entities, aiding in understanding and communicating complex systems. It was originally developed as a personal project to address the lack of practical digital tools for such visualizations, which are often created manually using pen and paper. Recognizing its potential, this tool is now open to a larger audience of systems thinkers and developers.
+Welcome to the **Connection Circle Visualization Tool**! This tool is designed to visualize relationships and connections between entities, aiding in understanding and communicating complex systems. It was originally developed as a personal project to address the lack of practical digital tools for such visualizations, which are often created manually using pen and paper. Recognizing its potential, this tool is now open to a larger audience of systems thinkers and developers.
 
 ## Features
 
@@ -20,11 +20,11 @@ Welcome to the **Circle Connection Visualization Tool**! This tool is designed t
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/your-username/circle-connection-visualization.git
+   git clone https://github.com/your-username/connection-circle.git
    ```
 2. Open the project directory:
    ```bash
-   cd circle-connection-visualization
+   cd connection-circle
    ```
 3. Open `index.html` in your browser.
    > No additional setup or dependencies are required as this is a purely client-side tool.
@@ -102,7 +102,7 @@ This project is open-source under the [MIT License](LICENSE).
 
 For any questions, suggestions, or feedback, please reach out to:
 
-- Email: [[uttamjodawat@iisc.ac.in](mailto:uttamjodawat@iisc.ac.in)]
+- Email: [uttamjodawat@iisc.ac.in](mailto:uttamjodawat@iisc.ac.in)
 - GitHub: [uttamjain8](https://github.com/uttamjain8)
 
 ---
